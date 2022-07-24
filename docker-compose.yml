@@ -1,0 +1,8 @@
+version: '3.6'
+
+services:
+  run_program:
+    build: ./dir
+    tty: true
+    volumes:
+      - ./src:/src

@@ -1,0 +1,16 @@
+FROM rocker/r-apt:bionic
+
+RUN apt-get update && \
+    apt-get -y install libgdal-dev && \
+    apt-get install -y -qq \
+    r-cran-dplyr \
+    r-cran-rjson \   
+    r-cran-data.table  \
+    r-cran-crayon \
+    r-cran-geosphere \
+    r-cran-lubridate  \
+    r-cran-sp \
+    r-cran-R.utils
+
+RUN R -e 'install.packages("tools")'
+RUN R -e 'install.packages("rgdal", repos="http://R-Forge.R-project.org")'
